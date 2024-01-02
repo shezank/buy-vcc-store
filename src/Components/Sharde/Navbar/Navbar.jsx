@@ -19,10 +19,10 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <h1 className="text-2xl lg:ml-24 font-bold text-teal-500">Buy VCC Store</h1>
+                    <h1 className="text-2xl font-bold text-teal-500">Buy VCC Store</h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu text-base font-medium menu-horizontal px-1">
                         {navlinks}
                     </ul>
                 </div>

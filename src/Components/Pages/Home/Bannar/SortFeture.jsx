@@ -2,7 +2,7 @@ import React from 'react';
 
 const SortFeture = () => {
     return (
-            <div className="relative my-28 px-4 sm:px-0">
+            <div className="relative mt-5 lg:mt-16 px-4 sm:px-0">
                 <div className="absolute inset-0 h-1/2 " />
                 <div className="relative grid mx-auto overflow-hidden bg-teal-400 divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
                     <div className="inline-block p-8 text-center">
