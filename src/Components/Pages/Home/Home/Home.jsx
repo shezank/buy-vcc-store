@@ -10,7 +10,6 @@ const Home = () => {
             <Bannar/>
             <SortFeture/>
             <Accounts/>
-            <Steps/>
         </div>
     );
 };
