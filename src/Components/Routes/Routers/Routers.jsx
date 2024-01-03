@@ -6,6 +6,7 @@ import Root from '../Root/Root';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
+import Dashboard from '../../Dashboard/Dashboard/Dashboard';
 
 const Routers = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const Routers = createBrowserRouter([
         },
       ]
     },
+    {
+      path: '/dashboard',
+      element: <Dashboard/>
+    }
   ]);
 
 export default Routers;
