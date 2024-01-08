@@ -1,7 +1,15 @@
-import React from 'react';
-import paypalaccounts from '../../../../assets/Payments/paypalaccounts.jpg'
+import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Account from './Account';
 
 const Accounts = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/services/accounts')
+        .then(res=>res.json())
+        .then(data => setProducts(data))
+    },[])
+    
     return (
         <div className='my-16'>
             <div className='text-center mb-10'>
@@ -10,14 +18,9 @@ const Accounts = () => {
             </div>
 
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-2'>
-                <div className="card bg-base-100 shadow-xl">
-                    <p className='absolute bg-cyan-700 rounded-br-lg rounded-tl-lg text-white p-2 text-xl font-extrabold '>$100</p>
-                    <figure><img className='h-[250px] w-full' src={paypalaccounts} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="text-2xl font-bold text-cyan-700">Buy Paypal Accounts</h2>
-                    </div>
-                    <button className="btn rounded-t-none bg-indigo-500 hover:bg-indigo-700 text-white font-medium text-xl">Buy Now</button>
-                </div>
+                 {
+                    products.map(product => <Account key={product._id} product={product}></Account>)
+                 }
             </div>
 
             <div className='flex justify-center mx-auto mt-10'>

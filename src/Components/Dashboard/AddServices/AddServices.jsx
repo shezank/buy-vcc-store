@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useAxiosSecure from '../../Hooks/useAxiosSecure/useAxiosSecure';
+import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../../Sharde/AuthProvider/AuthProvider';
 
 const AddServices = () => {
+    const {user} = useContext(AuthContext);
     const axisoSecure = useAxiosSecure()
-    const handleLogin = e => {
+    const handleLogin = async(e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -12,9 +15,13 @@ const AddServices = () => {
         const sortDescription = form.sortDescription.value;
         const serviceDetails = form.serviceDetails.value;
         const catagory = form.catagory.value;
-        const product = {name, price,image,sortDescription,serviceDetails,catagory};
+        const product = {name, price,image,sortDescription,serviceDetails,catagory, email: user.email};
         console.log(product)
-        // axisoSecure.post('/services', product)
+        const res = await axisoSecure.post('/services', product)
+        if(res.data){
+            console.log(res.data.insertedId)
+            toast.success(`${name} Successfully Add Your Product`)
+        }
 
     }
     return (
@@ -81,10 +88,9 @@ const AddServices = () => {
                             <button className="btn btn-primary">Submit</button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };

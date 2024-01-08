@@ -8,6 +8,8 @@ import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
 import Dashboard from '../../Dashboard/Dashboard/Dashboard';
 import AddServices from '../../Dashboard/AddServices/AddServices';
+import Accounts from '../../Pages/Home/Accounts/Accounts';
+import MyProducts from '../../Dashboard/MyProducts/MyProducts';
 
 const Routers = createBrowserRouter([
     {
@@ -18,6 +20,10 @@ const Routers = createBrowserRouter([
             path: '/',
             element: <Home/>
 
+        },
+        {
+            path: '/accounts',
+            element: <Accounts/>,
         },
         {
           path: '/login',
@@ -36,6 +42,10 @@ const Routers = createBrowserRouter([
         {
           path: 'add-services',
           element: <AddServices></AddServices>
+        },
+        {
+          path: 'my-services',
+          element: <MyProducts></MyProducts>
         }
       ]
     }
