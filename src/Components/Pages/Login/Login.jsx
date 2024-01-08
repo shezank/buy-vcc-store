@@ -53,7 +53,8 @@ const Login = () => {
     }
     return (
         <div className="hero min-h-screen bg-teal-100">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col lg:flex-row ">
+                <img className='hidden lg:flex mr-20 rounded-lg' src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7873.jpg" alt="" />
                 <div className="card flex-shrink-0 w-full max-w-sm border-4">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="text-center lg:text-left">

@@ -31,7 +31,8 @@ const Register = () => {
                 }).then(() => {
                     const user = {
                         name: data.name,
-                        email: data.email
+                        email: data.email,
+                        phone: data.phone
                     }
                     axiosPublice.post('users', user)
                         .then(res => {
@@ -46,9 +47,9 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-
+        <div className="hero min-h-screen bg-teal-100">
+            <div className="hero-content flex-col lg:flex-row">
+            <img className='hidden lg:flex mr-20 rounded-lg' src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7875.jpg" alt="" />
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="text-center lg:text-left">

@@ -21,7 +21,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <h1 className="text-2xl font-bold text-teal-500">Buy VCC Store</h1>
+                    <h1 className=" text-xl lg:text-2xl font-bold text-teal-500">Buy VCC Store</h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu text-base font-medium menu-horizontal px-1">

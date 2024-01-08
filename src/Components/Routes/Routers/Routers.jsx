@@ -7,6 +7,7 @@ import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
 import Dashboard from '../../Dashboard/Dashboard/Dashboard';
+import AddServices from '../../Dashboard/AddServices/AddServices';
 
 const Routers = createBrowserRouter([
     {
@@ -30,7 +31,13 @@ const Routers = createBrowserRouter([
     },
     {
       path: '/dashboard',
-      element: <Dashboard/>
+      element: <Dashboard/>,
+      children:[
+        {
+          path: 'add-services',
+          element: <AddServices></AddServices>
+        }
+      ]
     }
   ]);
 
