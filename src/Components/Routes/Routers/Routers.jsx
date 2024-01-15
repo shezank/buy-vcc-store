@@ -10,6 +10,7 @@ import Dashboard from '../../Dashboard/Dashboard/Dashboard';
 import AddServices from '../../Dashboard/AddServices/AddServices';
 import Accounts from '../../Pages/Home/Accounts/Accounts';
 import MyProducts from '../../Dashboard/MyProducts/MyProducts';
+import AdminRoute from '../../Sharde/AdminRoute/AdminRoute';
 
 const Routers = createBrowserRouter([
     {
@@ -41,11 +42,11 @@ const Routers = createBrowserRouter([
       children:[
         {
           path: 'add-services',
-          element: <AddServices></AddServices>
+          element: <AdminRoute><AddServices></AddServices></AdminRoute>
         },
         {
           path: 'my-services',
-          element: <MyProducts></MyProducts>
+          element: <AdminRoute><MyProducts></MyProducts></AdminRoute>
         }
       ]
     }

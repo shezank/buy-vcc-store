@@ -1,4 +1,3 @@
-
 import { useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../Sharde/AuthProvider/AuthProvider';

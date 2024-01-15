@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useAdmin from '../../Hooks/useAdmin/useAdmin';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
     const navlinks = <>
         <Link to='/'><li><button>Home</button></li></Link>
         <Link to='/Accounts'><li><button>Accounts</button></li></Link>
@@ -44,12 +46,14 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li><a>Settings</a></li>
-                                <Link to='/dashboard'><li><button>Dashboard</button></li></Link>
-                                <li><button onClick={()=>logout()}>Logout</button></li>
+                                {isAdmin &&
+                                    <Link to='/dashboard'><li><button>Dashboard</button></li></Link>
+                                }
+                                <li><button onClick={() => logout()}>Logout</button></li>
                             </ul>
-                        </div>:
+                        </div> :
 
-                    <Link to='/login' className="btn bg-indigo-600 hover:bg-indigo-800 text-white"><button>Login</button></Link>
+                        <Link to='/login' className="btn bg-indigo-600 hover:bg-indigo-800 text-white"><button>Login</button></Link>
                     }
                 </div>
             </div>
